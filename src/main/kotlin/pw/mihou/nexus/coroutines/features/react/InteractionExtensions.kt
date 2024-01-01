@@ -10,7 +10,7 @@ import kotlin.time.Duration
 import kotlin.time.Duration.Companion.hours
 
 @JvmSynthetic
-fun <Interaction: InteractionBase> Interaction.AsyncR(ephemeral: Boolean, lifetime: Duration = 1.hours, react: React.() -> Unit) =
+fun <Interaction: InteractionBase> Interaction.AsyncR(ephemeral: Boolean, lifetime: Duration = 1.hours, react: suspend React.() -> Unit) =
     R(ephemeral, lifetime) {
         coroutine {
             react()

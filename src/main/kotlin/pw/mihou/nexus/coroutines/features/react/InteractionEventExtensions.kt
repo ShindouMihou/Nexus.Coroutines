@@ -11,7 +11,7 @@ import kotlin.time.Duration
 import kotlin.time.Duration.Companion.hours
 
 @JvmSynthetic
-suspend fun <Event: ApplicationCommandEvent, Interaction: InteractionBase> NexusInteractionEvent<Event, Interaction>.AsyncR(ephemeral: Boolean = false, lifetime: Duration = 1.hours, react: React.() -> Unit)  =
+suspend fun <Event: ApplicationCommandEvent, Interaction: InteractionBase> NexusInteractionEvent<Event, Interaction>.AsyncR(ephemeral: Boolean = false, lifetime: Duration = 1.hours, react: suspend React.() -> Unit)  =
     interaction.R(ephemeral, lifetime) {
         runBlocking {
             react()
