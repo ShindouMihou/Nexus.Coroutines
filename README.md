@@ -27,7 +27,4 @@ Here's an overview list of all the `Async` interfaces:
 - `AsyncRouteable`: replacement for `SubcommandRouter`'s `Routeable`
 - `AsyncNexusExpressRequest`: replacement for `NexusExpressRequest`
 
-All `Nexus.R` call point (e.g. `NexusCommandEvent.R`) have a corresponding `Async` extension, such as: `NexusCommandEvent.AsyncR` 
-which should be one-to-one same as its counterpart.
-
 You are also free to use the `coroutine` extension function provided in this, if you'd like.
